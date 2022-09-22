@@ -1,0 +1,21 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/gce-pd   # provisoner indicates the type of storage class - In this case it's a persistent disk from Google Cloud
+parameters:
+  type: pd-ssd   # this creates a high performance SSD type disk -- where as pd-standard for HDD type disk.
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: fast   # Should match with the name of the storage class object  
+  resources:
+    requests:
+      storage: 30Gi
