@@ -4,7 +4,7 @@ metadata:
   name: fast
 provisioner: kubernetes.io/gce-pd   # provisoner indicates the type of storage class - In this case it's a persistent disk from Google Cloud
 parameters:
-  type: pd-ssd   # this creates a high performance SSD type disk -- where as pd-standard for HDD type disk.
+  type: pd-ssd   # This creates high performance SSD type disks -- where as pd-standard for HDD type disks.
 
 ---
 

@@ -13,7 +13,7 @@ spec:
   mountOptions:
     - hard
     - nfsvers=4.1
-  nfs:
+  nfs:                        # NFS type storage
     path: /tmp
     server: 172.17.0.2
 
@@ -30,4 +30,4 @@ spec:
   accessModes:
     - ReadWriteOnce    
   storageClassName: slow 
-  volumeName: mypv  # Name of the PV object
+  volumeName: mypv  # Name of the PV object -- Should match
